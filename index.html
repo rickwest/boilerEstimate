@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Boiler Installation Quote Generator</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<!-- favicon and apple icon-->
+	<link rel="apple-touch-icon" sizes="76x76" href="" />
+	<link rel="icon" type="image/png" href="" />
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+
+</head>
+
+<body>
+	<div class="image-container set-full-height" style="background-image: url('assets/img/copper-bg.jpg')">
+	    <!-- Logo
+	    <a href="">
+	         <div class="logo-container">
+	            <div class="logo">
+	                <img src="">
+	            </div>
+	            <div class="brand">
+	            </div>
+	        </div>
+	    </a> -->
+
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+		            <!--      Wizard container        -->
+		            <div class="wizard-container">
+                        <!--switch data-color below to change them color -->
+		                <div class="card wizard-card" data-color="blue" id="wizard">
+			                <form action="generateEstimate.php" method="post">
+		                    	<div class="wizard-header">
+		                        	<h3 class="wizard-title">
+		                        		Boiler Installation Estimate
+		                        	</h3>
+                                    <h5>Complete the short form to get a <b>FREE</b>, instant boiler installation estimate.</h5>
+		                    	</div>
+								<div class="wizard-navigation">
+									<ul>
+			                            <li><a href="#existingInstall" data-toggle="tab">Your Property</a></li>
+			                            <li><a href="#newInstall" data-toggle="tab">New Boiler</a></li>
+			                            <li><a href="#additionalWork" data-toggle="tab">Additional Work</a></li>
+			                            <li><a href="#getQuote" data-toggle="tab">Get Quote</a></li>
+			                        </ul>
+								</div>
+		                        <div class="tab-content">
+		                            <div class="tab-pane" id="existingInstall">
+		                            	<div class="row">
+		                                	<div class="col-sm-12">
+		                                    	<h4 class="info-text">Tell us about your property and current boiler.</h4>
+		                                	</div>
+		                                	<div class="col-sm-8 col-sm-offset-2">
+                                                <div id="numberOfBedroomsGroup" class="form-group label-floating">
+                                                    <label for="numberOfBedrooms" class="control-label">How many bedrooms do you have?</label>
+                                                    <select id="numberOfBedrooms" name="numberOfBedrooms" class="form-control">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5+">5+</option>
+                                                    </select>
+                                                </div>
+		                                	</div>
+		                                	<div class="col-sm-8 col-sm-offset-2">
+		                                    	<div id="existingBoilerTypeGroup" class="form-group label-floating">
+                                                    <label for="existingBoilerType" class="control-label">What type of boiler do you currently have installed?</label>
+                                                    <select id="existingBoilerType" name="existingBoilerType" class="form-control">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="combi">Combination Boiler</option>
+                                                        <option value="regular">Regular boiler with cylinder</option>
+                                                        <option value="backboiler">Backboiler</option>
+                                                    </select>
+	                                        	</div>
+		                                	</div>
+		                                	<div class="col-sm-8 col-sm-offset-2">
+		                                    	<div id="existingFlueTypeGroup" class="form-group label-floating">
+		                                        	<label for="existingFlueType" class="control-label">What type of flue does your existing boiler have?</label>
+		                                        	<select id="existingFlueType" name="existingFlueType" class="form-control">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="standard">Standard flue</option>
+                                                        <option value="vertical">Vertical flue through roof</option>
+                                                        <option value="balanced">Balanced flue</option>
+                                                        <option value="open">Open flue/Chimney</option>
+                                                    </select>
+                                                </div>
+		                                	</div>
+		                            	</div>
+		                            </div>
+		                            <div class="tab-pane" id="newInstall">
+		                            	<div class="row">
+		                                	<div class="col-sm-12">
+		                                    	<h4 class="info-text">Tell us about your new boiler.</h4>
+		                                	</div>
+		                                	<div class="col-sm-8 col-sm-offset-2">
+                                                <div id="newBoilerTypeGroup" class="form-group label-floating">
+                                                    <label for="newBoilerType" class="control-label">What type of new boiler would you like?</label>
+                                                    <select id="newBoilerType" name="newBoilerType" class="form-control">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="combi">Combination Boiler</option>
+                                                        <option value="regular">Regular Boiler with Hot Water Cylinder</option>
+                                                    </select>
+	                                        	</div>
+		                                	</div>
+		                                	<div class="col-sm-8 col-sm-offset-2">
+		                                    	<div id="newBoilerLocationGroup" class="form-group label-floating">
+                                                    <label for="newBoilerLocation" class="control-label">Where would you like your new boiler fitting?</label>
+                                                    <select id="newBoilerLocation" name="newBoilerLocation" class="form-control">
+                                                        <option disabled="" selected=""></option>
+		                                            	<option value="existing">Back in same place</option>
+		                                            	<option value="relocate">Move to somewhere else</option>
+                                                    </select>
+	                                        	</div>
+		                                	</div>
+		                                	<div class="col-sm-8 col-sm-offset-2">
+		                                    	<div id="newFlueTypeGroup" class="form-group label-floating">
+		                                        	<label for="newFlueType" class="control-label">Is new location on an outside wall?</label>
+		                                        	<select id="newFlueType" name="newFlueType" class="form-control">
+                                                        <option disabled="" selected=""></option>
+		                                            	<option value="standard">Yes</option>
+		                                            	<option value="vertical">No </option>
+                                                    </select>
+                                                </div>
+		                                	</div>
+		                            	</div>
+                                    </div>
+		                            <div class="tab-pane" id="additionalWork">
+		                                <h4 class="info-text">Tell us about any additional work.</h4>
+		                                <div class="row">
+		                                    <div class="col-sm-5 col-sm-offset-1">
+                                                <div id="valvesRequiredGroup" class="form-group label-floating">
+		                                        	<label for="valvesRequired" class="control-label">Do you need any thermostatic valves fitting?</label>
+		                                        	<select id="valvesRequired" name="valvesRequired" class="form-control">
+		                                            	<option disabled="" selected=""></option>
+		                                            	<option value="1">Yes</option>
+		                                            	<option value="0">No </option>
+		                                        	</select>
+		                                    	</div>
+		                                    </div>
+		                                    <div class="col-sm-5">
+		                                    	<div id="numberOfValvesGroup" class="form-group label-floating">
+		                                        	<label for="numberOfValves" class="control-label">How many valves?</label>
+		                                        	<select id="numberOfValves" name="numberOfValves" class="form-control">
+		                                                    <option disabled="" selected=""></option>
+		                                            	    <option value="0">None required</option> 
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15+">15+</option>
+		                                        	</select>
+		                                    	</div>
+		                                    </div>
+		                                    <div class="col-sm-5 col-sm-offset-1">
+		                                    	<div id="newControlsGroup" class="form-group label-floating">
+		                                        	<label for="newControls" class="control-label">Do you need new controls fitting?</label>
+		                                        	<select id="newControls" name="newControls" class="form-control">
+		                                    			<option disabled="" selected=""></option>
+		                                            	<option value="1">Yes</option>
+		                                            	<option value="0">No </option>
+		                                        	</select>
+		                                    	</div>
+		                                    </div>
+		                                    <div class="col-sm-5">
+		                                    	<div id="smartControlsGroup" class="form-group label-floating">
+		                                        	<label for="smartControls" class="control-label">Would you liked smart controls?</label>
+		                                        	<select id="smartControls" name="smartControls" class="form-control">
+                                                        <option disabled="" selected=""></option>
+		                                            	<option value="1">Yes</option>
+		                                            	<option value="0">No </option>
+		                                        	</select>
+		                                    	</div>
+	                                    	</div>
+		                                </div>
+		                            </div>
+		                            <div class="tab-pane" id="getQuote">
+		                                <div class="row">
+		                                    <h4 class="info-text">Check your details and get your estimate.</h4>
+		                                    <div class="col-sm-5 col-sm-offset-1">
+                                                <table class="table table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><b>Number of bedrooms:</b></td>
+                                                            <td id="displayNumberOfBedrooms"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Existing boiler type:</b></td>
+                                                            <td id="displayExistingBoilerType"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Existing flue type:</b></td>
+                                                            <td id="displayExistingFlueType"></td>
+                                                        </tr>
+                                                          <tr>
+                                                            <td><b>New boiler type:</b></td>
+                                                            <td id="displayNewBoilerType"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>New boiler location:</b></td>
+                                                            <td id="displayNewLocation"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>New flue type:</b></td>
+                                                            <td id="displayNewFlueType"></td>
+                                                        </tr>
+                                                          <tr>
+                                                            <td><b>New valves:</b></td>
+                                                            <td id="displayValves"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Number of valves:</b></td>
+                                                            <td id="displayNumberOfValves"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>New controls:</b></td>
+                                                            <td id="displayControls"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Smart controls:</b></td>
+                                                            <td id="displaySmartControls"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+		                                    </div>
+		                                    <div id="quote" class="col-sm-5 text-center">
+                                                <div id="errorBlock" class="alert alert-danger hidden">
+                                                    <strong>Your form contains errors!</strong>
+                                                    <p id="displayErrors" class="text-left"></p>
+                                                </div>
+                                                <p id="quoteInfo">Hit the 'Get a quote' button to see your estimate.</p>
+												<div id="spinner" class="hidden">
+													<i class="fa fa-spinner fa-spin fa-5x" ></i>
+		                                        </div>
+												<div>
+													<h1 id="quoteResult"></h1>
+												</div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="wizard-footer">
+	                            	<div class="pull-right">
+	                                    <input type='button' class='btn btn-next btn-fill btn-info btn-wd' name='next' value='Next' />
+	                                    <input id="submitForm" type='submit' class='btn btn-finish btn-fill btn-success btn-wd' name='Get Quote' value='Get Quote'/>
+	                                </div>
+	                                <div class="pull-left">
+	                                    <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous'/>
+	                                </div>
+		                            <div class="clearfix"></div>
+		                        </div>
+			                </form>
+						</div>
+					</div> <!-- wizard container -->
+				</div>
+			</div> <!-- row -->
+		</div> <!--  big container -->
+		<!--<div class="footer">-->
+			<!--<div class="container text-center">-->
+				<!--Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee"></i> by <a href="">Rick</a>.-->
+			<!--</div>-->
+		<!--</div>-->
+	</div>
+</body>
+	<!--   Core JS Files   -->
+	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+	<!--  Plugin for the Wizard -->
+	<script src="assets/js/material-bootstrap-wizard.js"></script>
+
+	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="assets/js/jquery.validate.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			//function just to get values from form and return a data object. Iv used name selector as can change to radio button or other input without having to change any js or jquery selectors
+			function getFormData(){
+				return {
+				'numberOfBedrooms' : $("[name='numberOfBedrooms']").val(),
+				'existingBoilerType' : $("[name='existingBoilerType']").val(),
+				'existingFlueType' : $("[name='existingFlueType']").val(),
+				'newBoilerType' : $("[name='newBoilerType']").val(),
+				'newBoilerLocation' : $("[name='newBoilerLocation']").val(),
+				'newFlueType' : $("[name='newFlueType']").val(),
+				'valvesRequired' : $("[name='valvesRequired']").val(),
+				'numberOfValves' : $("[name='numberOfValves']").val(),
+				'newControls' : $("[name='newControls']").val(),
+				'smartControls' : $("[name='smartControls']").val()
+				};
+			}
+
+			// listen for form submit and then process the form
+			$('form').submit(function(event) {
+				$('#spinner').removeClass('hidden');
+
+				$.ajax({
+					type        : 'POST', // define the type of HTTP verb to use
+					url         : 'generateEstimate.php', // the url to POST to
+					data        :  getFormData(), // data object
+					dataType    : 'json', // what type of data to expect back from the server
+					encode      :  true
+				})
+				// use the done promise callback to display estimate on success
+					.done(function(data) {
+						//wrap in timeout function so can see pretty spinner
+						setTimeout(function(){
+							$('#quoteInfo').text('Based on the information that you have provided, your boiler installation estimate is:');
+							$('#quoteResult').text('£' + data['total']);
+							$('#spinner').addClass('hidden');
+							// log data to the console so i can see it
+							console.log(data);
+						},2000);
+					});
+				// stops the form from submitting the normal way and refreshing the page
+				event.preventDefault();
+			});
+
+			function displayVals() {
+				//this function manipulates data labels and form attributes depending on selected answers to other questions
+				//i also build list of errors, for incompleted fields
+				var formData = getFormData();
+				var errors = [];
+				$("#displayNumberOfBedrooms").text(formData['numberOfBedrooms']);
+
+				if (formData['existingBoilerType'] == 'combi') {
+					$("#displayExistingBoilerType").text('Combi');
+					$("[name='existingFlueType']").attr('disabled', false);
+					$("[name='newBoilerLocation']").attr('disabled', false);
+					$("#newBoilerTypeGroup").removeClass('is-empty');
+					$("[name='newBoilerType']").val('combi').attr('disabled', true);
+
+				} else if (formData['existingBoilerType'] == 'backboiler') {
+					$("#existingFlueTypeGroup").removeClass('is-empty');
+					$("[name='existingFlueType']").val('open').attr('disabled', true);
+					$("#newBoilerLocationGroup").removeClass('is-empty');
+					$("[name='newBoilerLocation']").val('relocate').attr('disabled', true);
+					$("[name='newBoilerType']").attr('disabled', false);
+					$("#displayExistingBoilerType").text('Backboiler');
+
+				} else if (formData['existingBoilerType'] == 'regular'){
+					$("#displayExistingBoilerType").text('Regular');
+					$("[name='existingFlueType']").attr('disabled', false);
+					$("[name='newBoilerLocation']").attr('disabled', false);
+					$("[name='newBoilerType']").attr('disabled', false);
+				} else {
+					errors.push('Please select existing boiler type');
+				}
+
+				if (formData['existingFlueType'] == 'standard'){
+					$("#displayExistingFlueType").text('Standard');
+				} else if (formData['existingFlueType'] == 'vertical'){
+					$("#displayExistingFlueType").text('Vertical');
+				} else if (formData['existingFlueType'] == 'balanced'){
+					$("#displayExistingFlueType").text('Balanced');
+				} else if (formData['existingFlueType'] == 'open'){
+					$("#displayExistingFlueType").text('Open');
+				} else {
+					errors.push('Please select existing flue type.');
+				}
+
+				if (formData['newBoilerType'] == 'combi'){
+					$("#displayNewBoilerType").text('Combi');
+				} else if (formData['newBoilerType'] == 'regular') {
+					$("#displayNewBoilerType").text('Regular');
+				} else {
+					errors.push('Please select new boiler type.');
+				}
+
+				if (formData['newBoilerLocation'] == 'existing') {
+					if (formData['existingFlueType'] == 'standard' || formData['existingFlueType'] == 'balanced'){
+						$("[name='newFlueType']").val('standard').attr('disabled', true);
+					} else if (formData['existingFlueType'] == 'vertical') {
+						$("[name='newFlueType']").val('vertical').attr('disabled', true);
+					}
+					$("#newFlueTypeGroup").removeClass('is-empty');
+					$("#displayNewLocation").text('As existing');
+				} else if (formData['newBoilerLocation'] == 'relocate'){
+					$("#displayNewLocation").text('Relocate new boiler');
+					$("[name='newFlueType']").attr('disabled', false);
+				} else {
+					errors.push('Please select new boiler location.');
+				}
+
+				if (formData['newFlueType'] == 'standard') {
+					$("#displayNewFlueType").text('Standard');
+				} else if (formData['newFlueType'] == 'vertical')  {
+					$("#displayNewFlueType").text('Vertical/Extended Flue')
+				} else {
+					errors.push('Please select new flue type.')
+				}
+
+				if (formData['valvesRequired'] == '1') {
+					$("#displayValves").text('Yes');
+					$("[name='numberOfValves']").attr('disabled', false);
+				} else if (formData['valvesRequired'] == '0'){
+					$("#numberOfValvesGroup").removeClass('is-empty');
+					$("[name='numberOfValves']").val('0').attr('disabled', true);
+					$("#displayValves").text('No');
+				} else {
+					errors.push('Please select number of valves required.')
+				}
+
+				$("#displayNumberOfValves").text(formData['numberOfValves']);
+
+				if (formData['newControls'] == '1') {
+					$("#displayControls").text('Yes');
+					$("[name='smartControls']").attr('disabled', false);
+				} else if (formData['newControls'] == '0'){
+					$("#smartControlsGroup").removeClass('is-empty');
+					$("[name='smartControls']").val('0').attr('disabled', true);
+					$("#displayControls").text('No');
+				} else {
+					errors.push('Please select whether new controls required.')
+				}
+
+				if (formData['smartControls'] == '1') {
+					$("#displaySmartControls").text('Yes');
+				} else if (formData['smartControls'] == '0'){
+					$("#displaySmartControls").text('No');
+				} else {
+					errors.push('Please select whether smart controls upgrade is required.')
+				}
+
+				checkErrors(errors)
+			}
+
+			function checkErrors(errors){
+				var i = 0;
+				var errorHTML = '';
+				if (errors.length > 0) {
+					for (i; i < errors.length; i++) {
+						errorHTML += "<i class='fa fa-exclamation-circle'></i>&nbsp;" + errors[i] + "<br>";
+					}
+					$("#errorBlock").removeClass('hidden');
+					$("#displayErrors").html(errorHTML);
+					$("#submitForm").attr('disabled', true);
+				} else {
+					$("#submitForm").attr('disabled', false);
+					$("#errorBlock").addClass('hidden');
+				}
+			}
+	// call function first time on page load then everytime an input in changed
+			displayVals();
+			$("select").change( displayVals );
+		});
+	</script>
+</html>
